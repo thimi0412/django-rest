@@ -3,6 +3,9 @@ from snippets.views import SnippetViewSet, UserViewSet
 from snippets import views
 from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
+from rest_framework.schemas import get_schema_view
+
+schema_view = get_schema_view(title='Pastebin API')
 
 snippet_list = SnippetViewSet.as_view({
     'get': 'list',
@@ -31,6 +34,7 @@ router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^schema/$', schema_view),
     url(r'^api-auth/', include('rest_framework.urls',
-        namespace='rest_framework'))
+        namespace='rest_framework')),
 ]
