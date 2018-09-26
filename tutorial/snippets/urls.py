@@ -21,3 +21,8 @@ urlpatterns = format_suffix_patterns([
         views.UserDetail.as_view(),
         name='user-detail')
 ])
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]
