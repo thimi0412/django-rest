@@ -7,8 +7,7 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 pygments = "*"
-coreapi = "*"
-coreapi-cli = "*"
+django-rest-swagger = "*"
 
 [dev-packages]
 "pep8" = "*"
